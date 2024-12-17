@@ -8,10 +8,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        yellow: "#FFA431",
+        lightyellow:"#FDC348",
+        bluegreen:"#0B7289",
+        gray:"#303030",
+        input: "#727272",
       },
+      fontFamily: {
+        stylefont: ['Archivo', 'sans-serif'],
+        textfont: ['Epilogue', 'sans-serif'],
+        titlefont: ['Lexend', 'sans-serif'],
+      },
+      
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          '.clip-triangle': {
+            clipPath: 'polygon(0 0, 0% 100%, 100% 0)',
+          },
+        },
+        ['responsive', 'hover']
+      );
+    },
+  ],
 };
