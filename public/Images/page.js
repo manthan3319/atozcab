@@ -24,8 +24,12 @@ import downicon from "./down-icon.svg";
 import topicon from "./top-icon.svg";
 import women from "./women-image.svg";
 import footerBg from "./footer-bg.jpg";
+import services from "./services-cab-dwarka.svg";
+import contactService from "./atoz-cab-dwarka-inquery-from.svg";
 
 export{
+    contactService,
+    services,
     footerBg,
     women,
     downicon,

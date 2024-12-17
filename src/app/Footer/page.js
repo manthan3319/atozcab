@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 import {  facebook, instagram, justdial, logo, mobileicon } from '../../../public/Images/page';
+import Link from 'next/link';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -42,7 +43,6 @@ const Footer = () => {
         >
             <div className="lg:max-w-[1440px] px-[20px] text-white py-[20px] ">
                 <div className="grid lg:grid-cols-3 gap-[15px] items-center">
-                    {/* Logo Section */}
                     <section>
                         <Image 
                             src={logo}
@@ -52,14 +52,12 @@ const Footer = () => {
                         />
                     </section>
 
-                    {/* Description Section */}
                     <section className="text-center">
                         <p>
                             Offering reliable and fast {`Atoz Cab Dwarka`} services for all your travel needs. Book your cab today!
                         </p>
                     </section>
 
-                    {/* Contact Information Section */}
                     <section className="flex flex-row bg-bluegreen p-[25px] rounded-md items-center">
                         <div>
                             <Image src={mobileicon} alt="Atoz Cab Dwarka - Contact Us" className="imageFilter" width={50} height={50} />
@@ -90,7 +88,6 @@ const Footer = () => {
                         </div>
                     </section>
 
-                    {/* Useful Links Section */}
                     <section>
                         <h2 className="text-[25px] font-bold font-titlefont mb-[10px]">Useful Links</h2>
                         <div>
@@ -110,7 +107,6 @@ const Footer = () => {
                         </div>
                     </section>
 
-                    {/* Newsletter Section */}
                     <section>
                         <h2 className="text-[25px] font-bold font-titlefont mb-[10px]">Subscribe for Updates</h2>
                         <div>
@@ -130,6 +126,12 @@ const Footer = () => {
                             </div>
                         </div>
                     </section>
+                </div>
+
+                <div className='mt-[50px] pt-[5px] border-t-[1px] border-t-gray'>
+                    <p className='text-center'>
+                        <Link href="https://techexpertsworld.com/" className='text-[15px] font-stylefont font-semibold'>Copyright 2024 © Vastranand Private Limited. All Rights Reserved.</Link>
+                    </p>
                 </div>
             </div>
         </footer>

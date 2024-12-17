@@ -15,18 +15,7 @@ export const NavbarData = () => [
       {
         id: 2,
         name: "About",
-        subcategory: [
-          {
-            id: 1,
-            name: "AtoZ Cab",
-            link: "/about-atoz-cab"
-          },
-          {
-            id: 2,
-            name: "Testimonial",
-            link: "/testimonials",
-          }
-        ]
+        link:"/aboutus-cab-dwarka"
       },
       {
         id: 3,
