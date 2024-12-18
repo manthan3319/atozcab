@@ -20,20 +20,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.imageFilter{
+.imageFilter {
   filter: invert(1);
 }
-
-
-
 
 .navigation > a {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
-.custom-book-taxi{
+.custom-book-taxi {
   position: relative;
   font-size: 16px;
   line-height: 20px;
@@ -62,15 +58,10 @@ body {
   clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
 }
 
-
-
 .custom-book-taxi:hover {
-  color: #d97706; 
-  background-color: #fef3c7; 
+  color: #d97706;
+  background-color: #fef3c7;
 }
-
-
-
 
 .main-slider::before {
   content: "";
@@ -78,39 +69,38 @@ body {
   top: -1px;
   width: 50%;
   height: 100%;
-  background-image: url('/Images/cab-dwarka.svg');  
+  background-image: url("/Images/cab-dwarka.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   clip-path: polygon(100% 0%, 100% 100%, 0 0%, 0 0, 0% 0%);
-  z-index: 1; 
+  z-index: 1;
 }
 
 .main-slider::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 150px; 
-  background: white; 
+  height: 150px;
+  background: white;
   /* background-image: url('/Images/dwarka-best-cab-service.svg');   */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  clip-path: path("M0,90 C150,0 1530,190 2020,110 L500,200 L0,240 Z");
-  z-index: 1; 
+  clip-path: path("M0,114 C150,0 1465,161 2006,149 L500,191 L0,225 Z");
+  z-index: 1;
   bottom: 0;
   border-top: #0a0a0a;
 }
 
-
-.custom-book-taxi2{
+.custom-book-taxi2 {
   position: relative;
   font-size: 16px;
   line-height: 20px;
   padding: 24px 90px 20px 60px;
   font-weight: 700;
   color: white;
-  background-color: #0B7289;
+  background-color: #0b7289;
   clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
@@ -132,7 +122,6 @@ body {
   clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
 }
 
-
 .booking-section::before {
   content: "";
   position: absolute;
@@ -141,7 +130,7 @@ body {
   left: 95px;
   height: 100%;
   width: 235px;
-  background-color: #0B7289;
+  background-color: #0b7289;
   -webkit-transform: skew(-19deg);
   transform: skew(-19deg);
   pointer-events: none;
@@ -151,7 +140,7 @@ body {
 .booking-section::after {
   content: "";
   position: absolute;
-  background-image: url('/Images/dwarka-texi-car.svg');  
+  background-image: url("/Images/dwarka-texi-car.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -162,8 +151,7 @@ body {
   box-shadow: 8px -2px 8px gray;
 }
 
-
-.booking-sectionbtn{
+.booking-sectionbtn {
   position: relative;
   font-size: 16px;
   line-height: 20px;
@@ -192,18 +180,16 @@ body {
   clip-path: polygon(0 0, 100% 0, 89% 100%, 0 100%);
 }
 
-
-
 .booking-sectionbtn:hover {
-  color: #d97706; 
-  background-color: #fef3c7; 
+  color: #d97706;
+  background-color: #fef3c7;
 }
 
 .taxi-animation {
   position: absolute;
   top: 0;
-  left: -50px; 
-  animation: moveTaxiContinuous 20s linear infinite; 
+  left: -50px;
+  animation: moveTaxiContinuous 20s linear infinite;
 }
 
 @keyframes moveTaxiContinuous {
@@ -211,14 +197,13 @@ body {
     left: -50px;
   }
   100% {
-    left: 100%; 
+    left: 100%;
   }
 }
 
 .tranfrom {
   transform: translate(0%, -7.122%) translate3d(0px, 0px, 0px);
 }
-
 
 .faqs-section::before {
   content: "";
@@ -251,4 +236,10 @@ body {
   clip-path: polygon(49% 0%, 94% 0px, 49% 100%, 0% 100%);
   margin-bottom: 0;
   margin-left: 55px;
+}
+
+@media only screen and (max-width: 1536px) {
+  .faqs-section:before {
+    transform: skew(-25deg);
+  }
 }

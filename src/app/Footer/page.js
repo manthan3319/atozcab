@@ -41,7 +41,7 @@ const Footer = () => {
                 backgroundAttachment: 'fixed',
             }}
         >
-            <div className="lg:max-w-[1440px] px-[20px] text-white py-[20px] ">
+            <div className="lg:max-w-[1440px] px-[20px] text-white py-[20px] m-auto">
                 <div className="grid lg:grid-cols-3 gap-[15px] items-center">
                     <section>
                         <Image 
