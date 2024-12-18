@@ -192,6 +192,8 @@ body {
   animation: moveTaxiContinuous 20s linear infinite;
 }
 
+
+
 @keyframes moveTaxiContinuous {
   0% {
     left: -50px;
