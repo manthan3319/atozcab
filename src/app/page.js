@@ -1,38 +1,39 @@
-import Image from "next/image";
-import HomeSlider from "./home-slider/page";
-import OnlineBooking from "./Online-booking/page";
-import AboutAtoZCab from "./about-atoz-cab/page";
-import AboutLatestService from "./atoz-latest-services/page";
-import WhyChooesUs from "./why-choose-atoz-cab/page";
-import AtozCabFaq from "./AtoZ-cab-faq/page";
-import TrustedCabService from "./Trusted-Cab-Service-atoz/page";
+"use client";
+import dynamic from "next/dynamic";
+
+// Lazy load components
+const HomeSlider = dynamic(() => import("./home-slider/page"));
+const OnlineBooking = dynamic(() => import("./Online-booking/page"));
+const AboutAtoZCab = dynamic(() => import("./about-atoz-cab/page"));
+const AboutLatestService = dynamic(() => import("./atoz-latest-services/page"));
+const WhyChooseUs = dynamic(() => import("./why-choose-atoz-cab/page"));
+const AtozCabFaq = dynamic(() => import("./AtoZ-cab-faq/page"));
+const TrustedCabService = dynamic(() => import("./Trusted-Cab-Service-atoz/page"));
 
 export default function Home() {
   return (
     <>
-    <div>
-      <HomeSlider/>
-    </div>
-    <div>
-      <OnlineBooking/>
-    </div>
-
-    <div>
-      <AboutAtoZCab/>
-    </div>
-    <div>
-      <AboutLatestService/>
-    </div>
-    <div>
-      <WhyChooesUs/>
-    </div>
-    <div>
-      <AtozCabFaq/>
-    </div>
-    <div>
-      <TrustedCabService/>
-    </div>
+      <div>
+        <HomeSlider />
+      </div>
+      <div>
+        <OnlineBooking />
+      </div>
+      <div>
+        <AboutAtoZCab />
+      </div>
+      <div>
+        <AboutLatestService />
+      </div>
+      <div>
+        <WhyChooseUs />
+      </div>
+      <div>
+        <AtozCabFaq />
+      </div>
+      <div>
+        <TrustedCabService />
+      </div>
     </>
   );
 }
-8

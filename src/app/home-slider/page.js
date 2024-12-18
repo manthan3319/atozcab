@@ -1,40 +1,90 @@
-import Image from 'next/image';
-import React from 'react';
-import { dwarkacab } from '../../../public/Images/page'; // Image import
-import Link from 'next/link';
+"use client";
+import Image from "next/image";
+import React from "react";
+import { motion } from "framer-motion";
+import { dwarkacab } from "../../../public/Images/page"; // Image import
+import Link from "next/link";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.4, // Sequential animation delay
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 }, // Slide down initially
+  show: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  show: { opacity: 1, scale: 1, transition: { duration: 1.2, ease: "easeOut" } },
+};
 
 const HomeSlider = () => {
   return (
-    <div className="bg-lightyellow before:h-full overflow-hidden main-slider before:right-0 relative wave-container">
+    <motion.div
+      className="bg-lightyellow before:h-full overflow-hidden main-slider before:right-0 relative wave-container"
+      initial="hidden"
+      animate="show"
+      variants={containerVariants} // Staggered animation
+    >
       <div className="lg:max-w-[1440px] px-[20px] m-auto">
         <div className="h-[100vh] flex justify-center items-center">
-          <div className="w-[50%]">
-            {/* Main Heading with keyword */}
+          {/* Left Section with Text */}
+          <motion.div className="w-[50%]" variants={itemVariants}>
+            {/* Main Heading */}
             <h1 className="text-[45px] text-white font-bold font-titlefont mb-[15px]">
-              Reserve your taxi from any location in <span className='text-bluegreen'>Dwarka!</span>
+              Reserve your taxi from any location in{" "}
+              <motion.span
+                style={{ display: "inline-block" }}
+                animate={{ color: "#00a6a6", scale: [1, 1.05, 1] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              >
+                Dwarka!
+              </motion.span>
             </h1>
-            
-            <p className='text-[18px] font-textfont'>
-              Looking for reliable taxi services in Dwarka? <b>AtoZ Cab Dwarka</b>  offers a seamless and comfortable experience for all your travel needs. Book your taxi now and travel hassle-free!
+
+            {/* Paragraph */}
+            <p className="text-[18px] font-textfont">
+              Looking for reliable taxi services in Dwarka?{" "}
+              <b>AtoZ Cab Dwarka</b> offers a seamless and comfortable experience
+              for all your travel needs. Book your taxi now and travel hassle-free!
             </p>
-            
-            <Link href="/" className='custom-book-taxi2 inline-block mt-[30px] bg-bluegreen'>
-              Discover More About AtoZ Cabs in Dwarka
-            </Link>
-          </div>
-          
-          <div className="w-[50%]">
-            <Image 
-              src={dwarkacab} 
-              alt="AtoZ Cab Dwarka - Book your taxi for a safe and comfortable ride" 
-              className='w-[100%] relative z-[99]' 
-              width={100} 
-              height={100} 
+
+            {/* Button */}
+            <motion.div variants={itemVariants}>
+              <Link
+                href="/"
+                className="custom-book-taxi2 inline-block mt-[30px] bg-bluegreen"
+              >
+                Discover More About AtoZ Cabs in Dwarka
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Section with Image */}
+          <motion.div className="w-[50%]" variants={imageVariants}>
+            <Image
+              src={dwarkacab}
+              alt="AtoZ Cab Dwarka - Book your taxi for a safe and comfortable ride"
+              className="w-[100%] relative z-[99]"
+              width={500}
+              height={500}
+              priority
             />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
