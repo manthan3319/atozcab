@@ -1,4 +1,4 @@
-import { LatestServices1, logo } from "../../../public/Images/page";
+import { AffordablePricingTransparent, AirportTransferssvg, BusinessTravel, CityTravel, GujaratTempleTours, LatestServices1, logo, OutstationCab, ProfessionalExperienced, ReliableComfortable, WeddingTravel } from "../../../public/Images/page";
 
 
 export const NavbarData = () => [
@@ -44,37 +44,37 @@ export const NavbarData = () => [
 export const LatestServices = [
   {
     id: 1,
-    image: LatestServices1,
+    image: GujaratTempleTours,
     name: 'Gujarat Temple Tours',
     description: 'Explore Gujarat’s sacred landmarks with AtoZ Cab. Visit the Dwarkadhish Temple, Somnath, and other iconic shrines in comfort and convenience, ensuring a memorable spiritual journey.',
   },
   {
     id: 2,
-    image: 'Images/atoz-gujarat-city-travel.jpg',
+    image: CityTravel,
     name: 'City Travel Services',
     description: 'Discover Gujarat’s vibrant cities like Ahmedabad, Surat, and Vadodara with AtoZ Cab. Our reliable city cab services are designed for hassle-free travel, ensuring comfort and punctuality.',
   },
   {
     id: 3,
-    image: 'Images/atoz-gujarat-corporate-travel.jpg',
+    image: BusinessTravel,
     name: 'Corporate & Business Travel',
     description: 'AtoZ Cab offers premium business travel services across Gujarat. With our professional drivers and well-maintained cabs, your corporate trips are always on time and comfortable.',
   },
   {
     id: 4,
-    image: 'Images/atoz-gujarat-outstation-travel.jpg',
+    image: OutstationCab,
     name: 'Outstation Cab Services',
     description: 'Plan your outstation trips with AtoZ Cab. Whether traveling from Ahmedabad to Mount Abu or Surat to Saputara, our services ensure safety, affordability, and a pleasant experience.',
   },
   {
     id: 5,
-    image: 'Images/atoz-gujarat-airport-transfers.jpg',
+    image: AirportTransferssvg,
     name: 'Airport Transfers',
     description: 'Experience stress-free airport transfers with AtoZ Cab. From Ahmedabad International Airport to other regional airports in Gujarat, we provide punctual and comfortable rides.',
   },
   {
     id: 6,
-    image: 'Images/atoz-gujarat-wedding-travel.jpg',
+    image: WeddingTravel,
     name: 'Wedding Travel Services',
     description: 'Make your special day perfect with AtoZ Cab’s wedding travel services. From guest pickups to bride and groom transportation, our luxurious and reliable cabs add elegance to your celebrations.',
   },
@@ -84,21 +84,21 @@ export const LatestServices = [
 export const WhyChooesUsContent = [
   {
     id: 1,
-    image: 'https://via.placeholder.com/300x200',
+    image: ReliableComfortable,
     title: 'Reliable and Comfortable Rides',
     content:
       'Atoz Cab Dwarka provides reliable and comfortable cab services for local and outstation travel. We ensure a safe, affordable, and on-time journey for every customer.',
   },
   {
     id: 2,
-    image: 'https://via.placeholder.com/300x200',
+    image: ProfessionalExperienced,
     title: 'Professional and Experienced Drivers',
     content:
       'Our drivers are professional, experienced, and familiar with all routes in and around Dwarka. Your safety and convenience are our top priorities.',
   },
   {
     id: 3,
-    image: 'https://via.placeholder.com/300x200',
+    image: AffordablePricingTransparent,
     title: 'Affordable Pricing and Transparent Billing',
     content:
       'At Atoz Cab Dwarka, we believe in transparent billing and offer affordable prices without hidden charges. Enjoy top-notch services at budget-friendly rates.',

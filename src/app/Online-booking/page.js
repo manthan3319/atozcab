@@ -45,7 +45,7 @@ const OnlineBooking = () => {
   return (
     <div className="mt-[50px]">
       <div className="lg:max-w-[1440px] m-auto px-[20px]">
-        <div className="w-[70%] m-auto relative">
+        <div className="md:w-[70%] w-[100%] m-auto relative">
           <div className="absolute top-[-30px] left-0 w-full h-[50px] overflow-hidden z-[3]">
             <Image
               src={taxiAnimation}
@@ -56,9 +56,9 @@ const OnlineBooking = () => {
             />
           </div>
         </div>
-        <div className="bg-gray rounded-md w-[70%] m-auto booking-section after:h-full after:left-0 after:w-[300px] after:top-1 relative overflow-hidden p-[20px]">
+        <div className="bg-gray rounded-md md:w-[70%] w-[100%] m-auto booking-section after:h-full after:left-0 after:w-[300px] after:top-1 relative overflow-hidden p-[20px]">
           <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
-          <div className="text-right relative z-[2]">
+          <div className="md:text-right text-left relative z-[2]">
             <div className="relative z-[99]">
               <h2 className="lg:text-[25px] text-[18px] font-stylefont font-medium text-lightyellow">
                 Online booking
@@ -67,7 +67,7 @@ const OnlineBooking = () => {
                 Confirm your booking now!
               </h1>
 
-              <div className="w-[60%] float-end">
+              <div className="md:w-[60%] w-[100%] float-end bokking-from-section">
                 <motion.div
                   className="grid lg:grid-cols-3 gap-x-[15px] gap-y-[25px] mt-[25px] animate-slideDown"
                   variants={sectionVariants}
@@ -79,10 +79,10 @@ const OnlineBooking = () => {
                       key={index}
                       variants={containerVariants}
                       initial="hidden"
-                      whileInView="visible"  // Trigger animation only when in view
-                      viewport={{ once: true }} // Animation happens once when entering the viewport
+                      whileInView="visible"  
+                      viewport={{ once: true }}
                       style={{
-                        transitionDelay: `${(index + 1) * 0.3}s`, // Sequential delay
+                        transitionDelay: `${(index + 1) * 0.3}s`,
                       }}
                     >
                       <InputField
@@ -120,7 +120,7 @@ const InputField = ({ placeholder, icon, type }) => {
       <input
         type={type || 'text'}
         placeholder={placeholder}
-        className="w-[100%] bg-transparent text-input placeholder:text-input outline-none font-textfont text-[14px]"
+        className="w-[100%] bg-transparent  placeholder:text-input outline-none font-textfont text-white text-[14px]"
       />
       <Image src={icon} width={35} height={35} className="imageFilter" />
     </div>

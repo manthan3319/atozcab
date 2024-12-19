@@ -30,22 +30,37 @@ const contactData = [
 const Contact = () => {
     return (
         <div>
+        
             <div
                 style={{
                     backgroundImage: `url('Images/contact-cab-dwarka.svg')`,
-                    backgroundSize: 'cover',
-                    backgroundAttachment: 'fixed',
+                    backgroundSize: '100% 100%',
+                    height: '350px',
                     backgroundRepeat: 'no-repeat',
+                    backgroundAttachment: 'fixed',
+                    position: 'relative',
                 }}
                 className="flex flex-col items-center justify-center text-center py-[50px]"
             >
-                <div>
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: '#000000bf',
+                        zIndex: 1,
+                    }}
+                ></div>
+
+                <div style={{ position: 'relative', zIndex: 2 }}>
                     <h1 className="text-[25px] lg:text-[55px] font-bold font-titlefont text-white">
-                        Contact - AtoZ Cab
+                        AtoZ Cab Packages - Dwarka
                     </h1>
                     <p>
                         <Link className="text-white" href="/">
-                            Contact / Home
+                            AtoZ Cab / Home
                         </Link>
                     </p>
                 </div>

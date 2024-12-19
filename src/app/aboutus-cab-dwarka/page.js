@@ -3,6 +3,8 @@ import Link from 'next/link';
 import React from 'react';
 import AboutAtoZCab from '../about-atoz-cab/page';
 import AtozCabFaq from '../AtoZ-cab-faq/page';
+import { OurCoreValues, OurMission, OurVision } from '../../../public/Images/page';
+import Image from 'next/image';
 
 const aboutus = () => {
   const categories = [
@@ -42,13 +44,28 @@ const aboutus = () => {
     <div>
       <div
         style={{
-          backgroundImage: `url('Images/services-cab-dwarka.svg')`,
-          backgroundSize: 'cover',
+          backgroundImage: `url('Images/travel-with-atoz-cab2.svg')`,
+          backgroundSize: '100% 100%',
+          height: '350px',
+          backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
+          position: 'relative',
         }}
         className="flex flex-col items-center justify-center text-center py-[50px]"
       >
-        <div>
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: '#000000bf',
+            zIndex: 1,
+          }}
+        ></div>
+
+        <div style={{ position: 'relative', zIndex: 2 }}>
           <h1 className="text-[25px] lg:text-[55px] font-bold font-titlefont text-white">
             AtoZ Cab - Dwarka
           </h1>
@@ -60,11 +77,12 @@ const aboutus = () => {
         </div>
       </div>
 
+
       <div className="lg:max-w-[1440px] m-auto px-[20px] pt-[50px]">
         <div className=' grid gap-[30px] lg:grid-cols-3 grid-cols-1'>
           <div className="bg-white rounded-lg shadow-md p-[20px] text-center">
             <div className="flex justify-center items-center mb-[15px]">
-              <img src="/Icons/mission-icon.svg" alt="Mission Icon" className="w-[50px] h-[50px]" />
+              <Image src={OurMission} alt="Mission-atoz" className="w-[100px] " width={100} />
             </div>
             <h2 className="text-[25px] font-bold mb-[10px] font-titlefont">Our Mission</h2>
             <p className="text-[16px] font-textfont">
@@ -74,7 +92,7 @@ const aboutus = () => {
 
           <div className="bg-white rounded-lg shadow-md p-[20px] text-center">
             <div className="flex justify-center items-center mb-[15px]">
-              <img src="/Icons/vision-icon.svg" alt="Vision Icon" className="w-[50px] h-[50px]" />
+              <Image src={OurVision} alt="Mission-atoz" className="w-[100px] " width={100} />
             </div>
             <h2 className="text-[25px] font-bold mb-[10px]  font-titlefont">Our Vision</h2>
             <p className="text-[16px] font-textfont">
@@ -84,7 +102,7 @@ const aboutus = () => {
 
           <div className="bg-white rounded-lg shadow-md p-[20px] text-center">
             <div className="flex justify-center items-center mb-[15px]">
-              <img src="/Icons/values-icon.svg" alt="Values Icon" className="w-[50px] h-[50px]" />
+              <Image src={OurCoreValues} alt="Mission-atoz" className="w-[100px] " width={100} />
             </div>
             <h2 className="text-[25px] font-bold mb-[10px]  font-titlefont">Our Core Values</h2>
             <ul className="list-disc text-gray-600 text-left pl-[20px] flex flex-col gap-[12px]">
@@ -136,10 +154,10 @@ const aboutus = () => {
       </div>
 
       <div>
-        <AtozCabFaq/>
+        <AtozCabFaq />
       </div>
 
-    </div>
+    </div >
   );
 };
 

@@ -5,7 +5,6 @@ import { aboutus, dateicon, supporticon } from '../../../public/Images/page';
 import { useInView } from 'react-intersection-observer';
 
 const AboutAtoZCab = () => {
-  // Animation for the container
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeInOut' } },
@@ -13,7 +12,7 @@ const AboutAtoZCab = () => {
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.1, // Reduced threshold for better triggering on mobile
   });
 
   return (
@@ -41,6 +40,7 @@ const AboutAtoZCab = () => {
               className="w-full h-auto object-cover"
               width={100}
               height={100}
+              priority
             />
           </div>
 

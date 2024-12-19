@@ -5,10 +5,10 @@ import Image from 'next/image';
 
 const TopLine = () => {
     return (
-        <div className="bg-black py-[10px] relative before:content-[''] before:absolute before:bg-lightyellow before:w-[50%] before:h-full before:top-0 before:z-0 after:content-[''] after:absolute after:left-1/2 after:bg-lightyellow after:clip-triangle after:w-[50px] after:h-full after:top-0 ">
+        <div className="bg-black py-[10px] relative before:content-[''] before:absolute before:bg-lightyellow before:w-[50%] before:h-full before:top-0 before:z-0 after:content-[''] after:absolute after:left-1/2 after:bg-lightyellow after:clip-triangle after:w-[50px] after:h-full after:top-0 md:block hidden ">
             <div className="lg:max-w-[1440px] m-auto px-[20px] ">
-                <div className="flex flex-row justify-between relative z-10 ">
-                    <div className="w-[50%] flex flex-row gap-[30px] ">
+                <div className="flex md:flex-row flex-col justify-between  relative z-10 ">
+                    <div className="w-[50%] flex md:flex-row flex-col md:gap-[30px]  ">
                         <div>
                             <Link href="/" className="flex flex-row items-center gap-[3px] text-black">
                                 <Image src={mobileicon} alt="Mobile icon" width={30} height={30} className="" />

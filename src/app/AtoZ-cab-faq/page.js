@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { AtoZFaq } from '../AtoZ-Cab-Data/page';
 import Image from 'next/image';
-import { downicon } from '../../../public/Images/page';
+import { downicon, faqbg } from '../../../public/Images/page';
 
 const AtozCabFaq = () => {
     const [openIndex, setOpenIndex] = useState(0);
@@ -19,8 +19,8 @@ const AtozCabFaq = () => {
         }}>
             <div className="lg:max-w-[1440px] m-auto">
                 {/* FAQ Section */}
-                <div className="flex flex-row ">
-                    <div className='w-[50%] py-[50px] px-[20px]'>
+                <div className="flex md:flex-row  flex-col ">
+                    <div className='md:w-[50%] w-[100%] py-[50px] px-[20px]'>
                         <div className="flex flex-row gap-[15px] justify-between mb-8">
                             <div className="">
                                 <p className="text-[20px] font-semibold font-stylefont text-yellow">Have any questions?</p>
@@ -51,9 +51,10 @@ const AtozCabFaq = () => {
                         </div>
                     </div>
 
-                    <div className='w-[50%] faqs-section relative'>
+                    <div className='md:w-[50%] w-[100%] faqs-section relative'>
                         <div className='faqs-section_image bg-gray h-full'>
-                        </div>
+                           
+                        </div> 
                     </div>
                 </div>
             </div>

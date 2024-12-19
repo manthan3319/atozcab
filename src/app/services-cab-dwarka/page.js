@@ -47,13 +47,28 @@ const ServiceCabDwarka = () => {
         <div>
             <div
                 style={{
-                    backgroundImage: `url('Images/services-cab-dwarka.svg')`,
+                    backgroundImage: `url('Images/services-cab-dwarka-atoz.svg')`,
                     backgroundSize: 'cover',
+                    height: '350px',
+                    backgroundRepeat: 'no-repeat',
                     backgroundAttachment: 'fixed',
+                    position: 'relative',
                 }}
                 className="flex flex-col items-center justify-center text-center py-[50px]"
             >
-                <div>
+                <div
+                    style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        backgroundColor: '#000000bf',
+                        zIndex: 1,
+                    }}
+                ></div>
+
+                <div style={{ position: 'relative', zIndex: 2 }}>
                     <h1 className="text-[25px] lg:text-[55px] font-bold font-titlefont text-white">Services</h1>
                     <p>
                         <Link className="text-white" href="/">
@@ -79,11 +94,11 @@ const ServiceCabDwarka = () => {
             </div>
 
             <div>
-                <WhyChooesUs/>
+                <WhyChooesUs />
             </div>
 
             <div>
-                <AtozCabFaq/>
+                <AtozCabFaq />
             </div>
 
         </div>

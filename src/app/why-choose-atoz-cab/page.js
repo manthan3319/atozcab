@@ -1,5 +1,6 @@
 import React from 'react';
 import { WhyChooesUsContent } from '../AtoZ-Cab-Data/page';
+import Image from 'next/image';
 
 const WhyChooesUs = () => {
   return (
@@ -24,10 +25,11 @@ const WhyChooesUs = () => {
               className="bg-white shadow-2xl flex flex-col justify-between rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div className="relative overflow-hidden">
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
                   className="w-full h-64 object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+                  width={50}
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 transition-opacity duration-500 ease-in-out hover:opacity-0"></div>
               </div>
