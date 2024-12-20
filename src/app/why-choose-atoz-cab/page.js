@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 import { WhyChooesUsContent } from '../AtoZ-Cab-Data/page';
 import Image from 'next/image';

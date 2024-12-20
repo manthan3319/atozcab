@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React from 'react';
 import { LatestServices } from '../AtoZ-Cab-Data/page';
 import { motion } from 'framer-motion';
