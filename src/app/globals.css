@@ -276,7 +276,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 480) {
+@media (max-width: 480px){
   .main-slider:before {
     width: 100%;
   }
