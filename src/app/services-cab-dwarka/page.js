@@ -1,7 +1,9 @@
+"use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import WhyChooesUs from '../why-choose-atoz-cab/page';
 import AtozCabFaq from '../AtoZ-cab-faq/page';
+import Loader from '../Loader/Loader';
 
 const servicesData = [
     {
@@ -43,8 +45,23 @@ const servicesData = [
 ];
 
 const ServiceCabDwarka = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading) {
+        return <Loader />;
+    }
+
     return (
         <div>
+
             <div
                 style={{
                     backgroundImage: `url('Images/services-cab-dwarka-atoz.svg')`,
@@ -69,7 +86,7 @@ const ServiceCabDwarka = () => {
                 ></div>
 
                 <div style={{ position: 'relative', zIndex: 2 }}>
-                    <h1 className="text-[25px] lg:text-[55px] font-bold font-titlefont text-white">Services</h1>
+                    <h1 className="text-[45px] lg:text-[55px] font-bold font-titlefont text-white">Services</h1>
                     <p>
                         <Link className="text-white" href="/">
                             Services / Home
@@ -100,7 +117,6 @@ const ServiceCabDwarka = () => {
             <div>
                 <AtozCabFaq />
             </div>
-
         </div>
     );
 };

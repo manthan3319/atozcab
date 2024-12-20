@@ -269,6 +269,28 @@ body {
 
 
 
+.custom-book-taxi3 {
+  position: relative;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  background-color: rgb(251, 191, 36);
+  clip-path: polygon(0px 0px, 100% 0px, 89% 100%, 0px 100%);
+  padding: 14px 49px 14px 49px;
+  transition: 0.3s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 @media only screen and (max-width: 1536px) {
   .faqs-section:before {

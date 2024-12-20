@@ -1,16 +1,46 @@
 "use client";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Loader from "./Loader/Loader";
 
-// Lazy load components
-const HomeSlider = dynamic(() => import("./home-slider/page"));
-const OnlineBooking = dynamic(() => import("./Online-booking/page"));
-const AboutAtoZCab = dynamic(() => import("./about-atoz-cab/page"));
-const AboutLatestService = dynamic(() => import("./atoz-latest-services/page"));
-const WhyChooseUs = dynamic(() => import("./why-choose-atoz-cab/page"));
-const AtozCabFaq = dynamic(() => import("./AtoZ-cab-faq/page"));
-const TrustedCabService = dynamic(() => import("./Trusted-Cab-Service-atoz/page"));
+// Lazy load components with loader
+const HomeSlider = dynamic(() => import("./home-slider/page"), {
+  loading: () => <Loader />,
+});
+const OnlineBooking = dynamic(() => import("./Online-booking/page"), {
+  loading: () => <Loader />,
+});
+const AboutAtoZCab = dynamic(() => import("./about-atoz-cab/page"), {
+  loading: () => <Loader />,
+});
+const AboutLatestService = dynamic(() => import("./atoz-latest-services/page"), {
+  loading: () => <Loader />,
+});
+const WhyChooseUs = dynamic(() => import("./why-choose-atoz-cab/page"), {
+  loading: () => <Loader />,
+});
+const AtozCabFaq = dynamic(() => import("./AtoZ-cab-faq/page"), {
+  loading: () => <Loader />,
+});
+const TrustedCabService = dynamic(() => import("./Trusted-Cab-Service-atoz/page"), {
+  loading: () => <Loader />,
+});
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);  
+    }, 1000); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;  
+  }
+
   return (
     <>
       <div>

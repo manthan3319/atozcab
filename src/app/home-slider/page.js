@@ -35,7 +35,7 @@ const HomeSlider = () => {
     >
       <div className="lg:max-w-[1440px] px-[20px] m-auto">
         <div className="sm:h-[100vh] flex md:flex-row flex-col justify-center items-center py-[30px]">
-          <motion.div className="md:w-[50%] w-[100%] relative z-[9999]" variants={itemVariants}>
+          <motion.div className="md:w-[50%] w-[100%] relative z-[99]" variants={itemVariants}>
             <h1 className="lg:text-[45px] text-[45px]  text-white font-bold font-titlefont mb-[15px]">
               Reserve your taxi from any location in{" "}
               <motion.span

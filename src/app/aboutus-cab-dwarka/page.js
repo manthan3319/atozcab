@@ -1,12 +1,15 @@
-"use client"
+"use client";
 import Link from 'next/link';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import AboutAtoZCab from '../about-atoz-cab/page';
 import AtozCabFaq from '../AtoZ-cab-faq/page';
 import { OurCoreValues, OurMission, OurVision } from '../../../public/Images/page';
 import Image from 'next/image';
+import Loader from '../Loader/Loader'; // Import the loader component
 
 const aboutus = () => {
+  const [loading, setLoading] = useState(true); // State to track loading
+
   const categories = [
     {
       title: "Reliable Services",
@@ -40,12 +43,25 @@ const aboutus = () => {
     },
   ];
 
+  useEffect(() => {
+    // Simulate loading or fetch your data here
+    const timer = setTimeout(() => {
+      setLoading(false); // Stop loading after 2 seconds (adjust as needed)
+    }, 2000); // Adjust the time based on your loading needs
+
+    return () => clearTimeout(timer); // Cleanup timeout on component unmount
+  }, []);
+
+  if (loading) {
+    return <Loader />; // Show loader while the component is loading
+  }
+
   return (
     <div>
       <div
         style={{
           backgroundImage: `url('Images/travel-with-atoz-cab2.svg')`,
-          backgroundSize: '100% 100%',
+          backgroundSize: 'cover',
           height: '350px',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
@@ -66,7 +82,7 @@ const aboutus = () => {
         ></div>
 
         <div style={{ position: 'relative', zIndex: 2 }}>
-          <h1 className="text-[25px] lg:text-[55px] font-bold font-titlefont text-white">
+          <h1 className="text-[35px] lg:text-[55px] font-bold font-titlefont text-white">
             AtoZ Cab - Dwarka
           </h1>
           <p>
@@ -77,12 +93,11 @@ const aboutus = () => {
         </div>
       </div>
 
-
       <div className="lg:max-w-[1440px] m-auto px-[20px] pt-[50px]">
-        <div className=' grid gap-[30px] lg:grid-cols-3 grid-cols-1'>
+        <div className="grid gap-[30px] lg:grid-cols-3 grid-cols-1">
           <div className="bg-white rounded-lg shadow-md p-[20px] text-center">
             <div className="flex justify-center items-center mb-[15px]">
-              <Image src={OurMission} alt="Mission-atoz" className="w-[100px] " width={100} />
+              <Image src={OurMission} alt="Mission-atoz" className="w-[100px]" width={100} />
             </div>
             <h2 className="text-[25px] font-bold mb-[10px] font-titlefont">Our Mission</h2>
             <p className="text-[16px] font-textfont">
@@ -92,9 +107,9 @@ const aboutus = () => {
 
           <div className="bg-white rounded-lg shadow-md p-[20px] text-center">
             <div className="flex justify-center items-center mb-[15px]">
-              <Image src={OurVision} alt="Mission-atoz" className="w-[100px] " width={100} />
+              <Image src={OurVision} alt="Mission-atoz" className="w-[100px]" width={100} />
             </div>
-            <h2 className="text-[25px] font-bold mb-[10px]  font-titlefont">Our Vision</h2>
+            <h2 className="text-[25px] font-bold mb-[10px] font-titlefont">Our Vision</h2>
             <p className="text-[16px] font-textfont">
               Our vision at AtoZ Cab Dwarka is to establish ourselves as the leading name in the cab industry. By creating a benchmark for reliable, customer-centric, and technology-driven transportation services, we aim to make AtoZ Cab Dwarka the top choice for cab services in Dwarka. Through innovation, trust, and long-term relationships, we are committed to shaping the future of Cab Dwarka services.
             </p>
@@ -102,9 +117,9 @@ const aboutus = () => {
 
           <div className="bg-white rounded-lg shadow-md p-[20px] text-center">
             <div className="flex justify-center items-center mb-[15px]">
-              <Image src={OurCoreValues} alt="Mission-atoz" className="w-[100px] " width={100} />
+              <Image src={OurCoreValues} alt="Mission-atoz" className="w-[100px]" width={100} />
             </div>
-            <h2 className="text-[25px] font-bold mb-[10px]  font-titlefont">Our Core Values</h2>
+            <h2 className="text-[25px] font-bold mb-[10px] font-titlefont">Our Core Values</h2>
             <ul className="list-disc text-gray-600 text-left pl-[20px] flex flex-col gap-[12px]">
               <li className='text-[16px] font-textfont'>
                 <strong>Customer First:</strong> Prioritizing customer safety, satisfaction, and convenience with every ride in Cab Dwarka.
@@ -156,8 +171,7 @@ const aboutus = () => {
       <div>
         <AtozCabFaq />
       </div>
-
-    </div >
+    </div>
   );
 };
 

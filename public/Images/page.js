@@ -47,9 +47,13 @@ import Ahmedabad from "./Ahmedabad-cab-dwarka.svg";
 import Porbandar from "./Porbandar-cab-dwarka.svg";
 import Mumbai from "./Mumbai-cab-dwarka.svg";
 import KhodalDham from "./KhodalDham-cab-dwarka.svg";
+import menuicon from "./menu-atozcab.svg";
+import loader from "./cab-taxi-dwarka.gif";
 
 
 export{
+    loader,
+    menuicon,
     KhodalDham,
     Mumbai,
     Porbandar,
