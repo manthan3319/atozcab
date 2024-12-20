@@ -1,3 +1,4 @@
+"use client"
 import { AffordablePricingTransparent, AirportTransferssvg, BusinessTravel, CityTravel, GujaratTempleTours, LatestServices1, logo, OutstationCab, ProfessionalExperienced, ReliableComfortable, WeddingTravel } from "../../../public/Images/page";
 
 
