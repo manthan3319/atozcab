@@ -94,7 +94,7 @@ const aboutus = () => {
       </div>
 
       <div className="lg:max-w-[1440px] m-auto px-[20px] pt-[50px]">
-        <div className="grid gap-[30px] lg:grid-cols-3 grid-cols-1">
+        <div className="grid gap-[30px] lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
           <div className="bg-white rounded-lg shadow-md p-[20px] text-center">
             <div className="flex justify-center items-center mb-[15px]">
               <Image src={OurMission} alt="Mission-atoz" className="w-[100px]" width={100} />
@@ -155,7 +155,7 @@ const aboutus = () => {
           </p>
         </div>
 
-        <div className="grid gap-[30px] lg:grid-cols-3 grid-cols-1">
+        <div className="grid gap-[30px] lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
           {categories.map((category, index) => (
             <div
               key={index}

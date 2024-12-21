@@ -59,7 +59,7 @@ const OnlineBooking = () => {
         </div>
         <div className="bg-gray rounded-md md:w-[70%] w-[100%] m-auto booking-section after:h-full after:left-0 after:w-[300px] after:top-1 relative overflow-hidden p-[20px]">
           <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
-          <div className="md:text-right text-left relative z-[2]">
+          <div className="xl:text-right text-left relative z-[2]">
             <div className="relative z-[99]">
               <h2 className="lg:text-[25px] text-[18px] font-stylefont font-medium text-lightyellow">
                 Online booking
@@ -68,7 +68,7 @@ const OnlineBooking = () => {
                 Confirm your booking now!
               </h1>
 
-              <div className="md:w-[60%] w-[100%] float-end bokking-from-section">
+              <div className="lg:w-[60%] w-[100%] float-end bokking-from-section">
                 <motion.div
                   className="grid lg:grid-cols-3 gap-x-[15px] gap-y-[25px] mt-[25px] animate-slideDown"
                   variants={sectionVariants}

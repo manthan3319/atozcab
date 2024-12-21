@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import React, { useState } from 'react';
-import {  facebook, instagram, justdial, logo, mobileicon } from '../../../public/Images/page';
+import { facebook, instagram, justdial, logo, mobileicon, whatshapp } from '../../../public/Images/page';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
     const socialmedia = [
         { name: 'Instagram', url: 'https://instagram.com/atozcabdwarka', icon: instagram },
         { name: 'JustDial', url: 'https://justdial.com/atozcabdwarka', icon: justdial },
-        { name: 'Facebook', url: 'https://facebook.com/atozcabdwarka', icon:facebook },
+        { name: 'Facebook', url: 'https://facebook.com/atozcabdwarka', icon: facebook },
     ];
 
     const usefulLinks = [
@@ -44,11 +44,11 @@ const Footer = () => {
             <div className="lg:max-w-[1440px] px-[20px] text-white py-[20px] m-auto">
                 <div className="grid lg:grid-cols-3 gap-[15px] items-center">
                     <section>
-                        <Image 
+                        <Image
                             src={logo}
-                            alt="Atoz Cab Dwarka - Reliable Taxi Service" 
-                            width={200} 
-                            height={200} 
+                            alt="Atoz Cab Dwarka - Reliable Taxi Service"
+                            width={150}
+                            height={200}
                         />
                     </section>
 
@@ -134,6 +134,25 @@ const Footer = () => {
                     </p>
                 </div>
             </div>
+
+            <div>
+
+                <Link
+                    href="https://wa.me/+918530802090?text=Hello,%20I%20need%20a%20taxi%20for%20my%20trip.%20Please%20provide%20a%20car%20from%20AtoZ%20Cab%20Dwarka%20for%20my%20journey%20to%20the%20desired%20destination." 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="fixed bottom-[15px] right-0 z-[999]"
+                >
+                    <Image
+                        src={whatshapp}
+                        alt="WhatsApp icon"
+                        width={80}
+                        height={50}
+                        className="zoom-animation"
+                    />
+                </Link>
+            </div>
+
         </footer>
     );
 };

@@ -290,11 +290,34 @@ body {
   }
 }
 
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Adjust scale as per your requirement */
+  }
+}
+
+.zoom-animation {
+  animation: zoomInOut 2s infinite ease-in-out;
+}
+
+
 
 
 @media only screen and (max-width: 1536px) {
   .faqs-section:before {
     transform: skew(-25deg);
+  }
+}
+
+@media (max-width: 1023px){
+  .bokking-from-section {
+    background: #0101019c;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 18px;
   }
 }
 

@@ -22,7 +22,7 @@ const itemVariants = {
 
 const imageVariants = {
   hidden: { opacity: 0, scale: 0.8 },
-  show: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeInOut" } }, 
+  show: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeInOut" } },
 };
 
 const HomeSlider = () => {
@@ -60,7 +60,7 @@ const HomeSlider = () => {
             <motion.div variants={itemVariants}>
               <Link
                 href="/"
-                className="custom-book-taxi2 inline-block mt-[30px] bg-bluegreen"
+                className="custom-book-taxi2 inline-block mt-[30px] bg-bluegreen "
               >
                 Discover More About AtoZ Cabs in Dwarka
               </Link>
@@ -72,11 +72,12 @@ const HomeSlider = () => {
             <Image
               src={dwarkacab}
               alt="AtoZ Cab Dwarka - Book your taxi for a safe and comfortable ride"
-              className="w-[100%] relative z-[999] text-car-slider"
+              className="w-full h-auto relative z-[999] text-car-slider"
               width={500}
               height={500}
-              priority
+              loading="lazy"
             />
+
           </div>
         </div>
       </div>

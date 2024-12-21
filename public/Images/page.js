@@ -3,9 +3,9 @@ import emailicon from './email-icon.svg';
 import facebook from './atoz-cab-facebook-logo.svg';
 import instagram  from './atoz-cab-instagram-logo.svg';
 import justdial  from './atoz-cab-justdial-logo.svg';
-import logo from './atoz-cab-logo.webp';
+import logo from './atoz-cab-dwarka.png';
 import dwarka from './cab-dwarka.svg';
-import dwarkacab from "./dwarka-cab.svg";
+import dwarkacab from "./cab-dwarka.png";
 import Mountain from "./dwarka-AtoZ-cab.png";
 import shapeline from "./shape-line.png";
 import texicab from "./dwarka-texi-car.svg";
@@ -49,8 +49,7 @@ import Mumbai from "./Mumbai-cab-dwarka.svg";
 import KhodalDham from "./KhodalDham-cab-dwarka.svg";
 import menuicon from "./menu-atozcab.svg";
 import loader from "./cab-taxi-dwarka.gif";
-
-
+import whatshapp from "./whatshapp-icon.svg";
 export{
     loader,
     menuicon,
@@ -102,5 +101,6 @@ export{
     Mountain,
     shapeline,
     texicab,
-    supporticon
+    supporticon,
+    whatshapp
 }

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import 'react-modern-drawer/dist/index.css'
 import Drawer from 'react-modern-drawer'
 import Image from "next/image";
-import { menuicon } from "../../../public/Images/page";
+import { logo, menuicon } from "../../../public/Images/page";
 
 const Navbar = () => {
     const [isSticky, setSticky] = useState(false);
@@ -48,11 +48,13 @@ const Navbar = () => {
             <div className="lg:max-w-[1440px] px-[20px] m-auto md:block hidden">
                 <div className="flex justify-between items-center">
                     <div>
-                        <p className="text-white">logo</p>
+                        <Link href="/">
+                            <Image src={logo} alt="atoz-cab-dwarka" width={100} height={50} />
+                        </Link>
                     </div>
 
                     <motion.div
-                        className="flex space-x-12 items-center"
+                        className="flex lg:space-x-12 md:space-x-5 items-center"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
@@ -105,7 +107,7 @@ const Navbar = () => {
             <div className="md:hidden block px-[20px] bg-black">
                 <div className="flex flex-row justify-between items-center">
                     <Link href="/">
-                        <p className="w-[25px] font-titlefont font-bold text-white">Logo</p>
+                    <Image src={logo} alt="atoz-cab-dwarka" width={80} height={50} />
                     </Link>
                     <div>
                         <button onClick={toggleDrawer}>

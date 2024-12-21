@@ -1,12 +1,13 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { LatestServices } from '../AtoZ-Cab-Data/page';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 import Image from 'next/image';
 
 const AboutLatestService = () => {
-    // Variants for card animation
     const cardVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeInOut' } },
@@ -15,7 +16,6 @@ const AboutLatestService = () => {
     return (
         <div className="bg-gray-50 py-10">
             <div className="lg:max-w-[1440px] m-auto px-4">
-                {/* Section Title */}
                 <div className="text-center mb-8">
                     <p className="text-[20px] font-stylefont font-semibold text-yellow">LATEST SERVICES</p>
                     <h2 className="lg:text-[35px] text-[25px] font-titlefont font-semibold text-bluegreen">
@@ -23,14 +23,14 @@ const AboutLatestService = () => {
                     </h2>
                 </div>
 
-                {/* Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {LatestServices.map((service, index) => {
-                        // Use Intersection Observer for each card
                         const { ref, inView } = useInView({
-                            triggerOnce: true, // Trigger animation only once
-                            threshold: 0.1, // Trigger when 10% of the card is visible
+                            triggerOnce: true,
+                            threshold: 0.1,
                         });
+
+                        const [imageLoaded, setImageLoaded] = useState(false);
 
                         return (
                             <motion.div
@@ -47,12 +47,23 @@ const AboutLatestService = () => {
                                         clipPath: 'polygon(0 0, 100% 0, 100% 90%, 0% 100%)',
                                     }}
                                 >
+                                    {!imageLoaded && (
+                                        <Skeleton
+                                            baseColor="#f3f3f3"
+                                            highlightColor="#ecebeb"
+                                            height="100%"
+                                            width="100%"
+                                            className="absolute inset-0"
+                                        />
+                                    )}
                                     <Image
                                         src={service.image}
                                         alt={service.name}
-                                        className="w-full h-[300px] object-cover"
-                                        width={40}
-                                        height={40}
+                                        className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-300 ${
+                                            imageLoaded ? 'opacity-100' : 'opacity-0'
+                                        }`}
+                                        layout="fill"
+                                        onLoadingComplete={() => setImageLoaded(true)}
                                     />
                                     <div className="absolute bottom-0 left-0 w-full h-[10px] bg-yellow-400" />
                                 </div>
