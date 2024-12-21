@@ -59,7 +59,9 @@ const HomeSlider = () => {
 
             <motion.div variants={itemVariants}>
               <Link
-                href="/"
+                href="https://wa.me/+918530802090?text=Hello,%20I%20need%20a%20taxi%20for%20my%20trip.%20Please%20provide%20a%20car%20from%20AtoZ%20Cab%20Dwarka%20for%20my%20journey%20to%20the%20desired%20destination."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="custom-book-taxi2 inline-block mt-[30px] bg-bluegreen "
               >
                 Discover More About AtoZ Cabs in Dwarka

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react'
 import { women } from '../../../public/Images/page';
+import Link from 'next/link';
 
 const TrustedCabService = () => {
     return (
@@ -13,7 +14,11 @@ const TrustedCabService = () => {
                             Cab Service</h1>
 
                         <div className='float-left mt-[20px]'>
-                            <button className='booking-sectionbtn'>Book a Taxi</button>
+                            <Link 
+                            href="https://wa.me/+918530802090?text=Hello,%20I%20need%20a%20taxi%20for%20my%20trip.%20Please%20provide%20a%20car%20from%20AtoZ%20Cab%20Dwarka%20for%20my%20journey%20to%20the%20desired%20destination."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='booking-sectionbtn'>Book a Taxi</Link>
                         </div>
                     </div>
                     <div className='md:w-[50%] w-[100%] md:mt-[-50px] mt-[-30px] right-0 text-right'>

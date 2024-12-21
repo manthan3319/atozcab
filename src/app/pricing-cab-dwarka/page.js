@@ -135,7 +135,7 @@ const PricingCabDwarka = () => {
                         AtoZ Cab Packages - Dwarka
                     </h1>
                     <p>
-                        <Link className="text-white" href="/">
+                        <Link  className="text-white" href="/">
                             AtoZ Cab / Home
                         </Link>
                     </p>
@@ -172,9 +172,11 @@ const PricingCabDwarka = () => {
 
                                     <div className="flex items-center justify-between mt-4 border-t pt-4">
                                         <p className="text-yellow-500 text-lg font-bold">{pkg.price}</p>
-                                        <button className="bg-yellow hover:bg-yellow-600 text-white px-4 py-2 rounded-md transition-colors">
+                                        <Link href="https://wa.me/+918530802090?text=Hello,%20I%20need%20a%20taxi%20for%20my%20trip.%20Please%20provide%20a%20car%20from%20AtoZ%20Cab%20Dwarka%20for%20my%20journey%20to%20the%20desired%20destination."
+                target="_blank"
+                rel="noopener noreferrer" className="bg-yellow inline-block hover:bg-yellow-600 text-white px-4 py-2 rounded-md transition-colors">
                                             Book Now
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
