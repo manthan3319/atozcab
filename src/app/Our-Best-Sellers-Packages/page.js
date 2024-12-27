@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 'use client';
 import React, { useRef, useState, useEffect } from 'react';
 import { packages } from '../AtoZ-Cab-Data/page';
@@ -110,71 +110,3 @@ const PackageCard = ({ pkg }) => {
 };
 
 export default OurBestSellersPackages;
-=======
-'use client';
-import React from 'react'
-import { packages } from '../AtoZ-Cab-Data/page';
-import Link from 'next/link';
-import Image from 'next/image';
-
-const OurBestSellersPackages = () => {
-    return (
-        <div className="lg:max-w-[1440px] m-auto px-[20px] pt-[50px]">
-            <div className="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 md:grid-cols-2 gap-[25px]">
-                {packages.map((pkg, index) => (
-                    <div
-                        key={index}
-                        className="flex flex-col rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden bg-white "
-                    >
-                        <div className="h-[350px] bg-gradient-to-r overflow-hidden from-blue-500 to-bluegreen flex items-center justify-center text-white text-lg font-bold">
-                            <Image src={pkg.img} alt={pkg.title} className="w-full" width={100} />
-                        </div>
-                        
-             
-                        <div className="p-5 flex flex-col justify-between h-[600px]">
-                            <div>
-                                <p className="mb-[5px] font-stylefont font-normal">{pkg.title}</p>
-                                <p className="text-bluegreen font-semibold text-sm">{pkg.duration}</p>
-                                <p className="text-gray-700 text-sm mt-2">{pkg.description}</p>
-
-                                <ul className="list-disc list-inside mt-2 text-gray-600">
-                                    {pkg.places?.map((place, placeIndex) => (
-                                        <li key={placeIndex}>{place}</li>
-                                    ))}
-                                </ul>
-
-                                <div className="mt-4">
-                                    <p className="font-bold text-gray-800">Car Options:</p>
-                                    <ul className="mt-2">
-                                        {pkg.cars.map((car, carIndex) => (
-                                            <li key={carIndex} className="flex justify-between text-gray-700">
-                                                <span>{car.type}</span>
-                                                <span className='flex flex-row gap-[5px]'><span>₹</span>{car.price}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center justify-between mt-4 border-t pt-4">
-                                <p className="text-yellow-500 text-lg font-bold">{pkg.price}</p>
-                                <Link
-                                    href="https://wa.me/+918530802090?text=Hello,%20I%20want%20to%20book%20the%20Dwarka%20to%20Somnath%20package.%20Please%20provide%20details."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-yellow inline-block hover:bg-yellow-600 text-white px-4 py-2 rounded-md transition-colors"
-                                >
-                                    Book Now
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    )
-}
-
-
-export default OurBestSellersPackages;
->>>>>>> 8ddc7790b008e8f0470bba7ce9f1630b3eb40779
