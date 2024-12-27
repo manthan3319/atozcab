@@ -10,17 +10,18 @@ const TopLine = () => {
                 <div className="flex md:flex-row flex-col justify-between  relative z-10 ">
                     <div className="w-[50%] flex md:flex-row flex-col md:gap-[30px]  ">
                         <div>
-                            <Link href="/" className="flex flex-row items-center gap-[3px] text-black">
+                            <Link href="tel:+918530802090" className="flex flex-row items-center gap-[3px] text-black">
                                 <Image src={mobileicon} alt="Mobile icon" width={30} height={30} className="" />
                                 <p className="font-textfont font-medium">+91 85308 02090</p>
                             </Link>
                         </div>
                         <div>
-                            <Link href="/" className="flex flex-row items-center gap-[3px] text-black">
+                            <Link href="mailto:info@atozcab.in" className="flex flex-row items-center gap-[3px] text-black">
                                 <Image src={emailicon} alt="Email icon" width={30} height={30} className="" />
                                 <p className="font-textfont font-medium">info@atozcab.in</p>
                             </Link>
                         </div>
+
                     </div>
 
                     <div className="w-[50%] flex justify-end">

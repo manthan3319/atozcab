@@ -20,8 +20,8 @@ const inputFields = [
   { placeholder: 'Passenger', icon: passengericon },
   { placeholder: 'Start Destination', icon: locationicon },
   { placeholder: 'End Destination', icon: locationicon },
-  { placeholder: 'Date', icon: dateicon, type: 'date' },
-  { placeholder: 'Time', icon: timeicon, type: 'time' },
+  { placeholder: 'Date', type: 'date' },
+  { placeholder: 'Time', type: 'time' },
 ];
 
 const sectionVariants = {
@@ -31,10 +31,10 @@ const sectionVariants = {
 
 const containerVariants = {
   hidden: {},
-  visible: { 
-      transition: {
-          staggerChildren: 0.5,
-      },
+  visible: {
+    transition: {
+      staggerChildren: 0.5,
+    },
   },
 };
 const inputFieldVariants = {
@@ -80,7 +80,7 @@ const OnlineBooking = () => {
                       key={index}
                       variants={containerVariants}
                       initial="hidden"
-                      whileInView="visible"  
+                      whileInView="visible"
                       viewport={{ once: true }}
                       style={{
                         transitionDelay: `${(index + 1) * 0.3}s`,
@@ -88,11 +88,12 @@ const OnlineBooking = () => {
                     >
                       <InputField
                         placeholder={field.placeholder}
-                        icon={field.icon}
+                        icon={field.icon || null}
                         type={field.type}
                       />
                     </motion.div>
                   ))}
+
                 </motion.div>
 
                 <div className="float-left mt-[50px]">
@@ -106,7 +107,6 @@ const OnlineBooking = () => {
     </div>
   );
 };
-
 const InputField = ({ placeholder, icon, type }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -123,7 +123,8 @@ const InputField = ({ placeholder, icon, type }) => {
         placeholder={placeholder}
         className="w-[100%] bg-transparent  placeholder:text-input outline-none font-textfont text-white text-[14px]"
       />
-      <Image src={icon} width={35} height={35} className="imageFilter" />
+      {/* आइकन केवल तभी रेंडर करें जब `icon` मौजूद हो */}
+      {icon && <Image src={icon} width={30} height={30} className="imageFilter" />}
     </div>
   );
 };

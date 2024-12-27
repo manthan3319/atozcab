@@ -302,6 +302,14 @@ body {
 .zoom-animation {
   animation: zoomInOut 2s infinite ease-in-out;
 }
+/* Add this to your CSS file if not already included */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
 
 
 

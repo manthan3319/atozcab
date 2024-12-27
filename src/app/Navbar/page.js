@@ -107,8 +107,14 @@ const Navbar = () => {
             <div className="md:hidden block px-[20px] bg-black">
                 <div className="flex flex-row justify-between items-center">
                     <Link href="/">
-                    <Image src={logo} alt="atoz-cab-dwarka" width={80} height={50} />
+                        <Image src={logo} alt="atoz-cab-dwarka" width={80} height={50} />
                     </Link>
+
+                    <div>
+                        <Link href="tel:+918530802090" className="flex flex-row items-center gap-[3px] font-mono rounded-lg text-black px-[25px] py-[10px] bg-white">
+                           <span><i class="fa fa-phone" aria-hidden="true"></i></span> <span>Call Now</span> 
+                        </Link>
+                    </div>
                     <div>
                         <button onClick={toggleDrawer}>
                             <Image src={menuicon} alt="menu-atozcab" width={45} className="" />

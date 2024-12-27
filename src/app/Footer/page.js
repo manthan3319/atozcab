@@ -23,12 +23,12 @@ const Footer = () => {
     ];
 
     const usefulLinks = [
-        { text: 'Home', url: '/home' },
-        { text: 'About Us', url: '/about' },
-        { text: 'Services', url: '/services' },
-        { text: 'Packages', url: '/packages' },
-        { text: 'Book Taxi', url: '/book-taxi' },
-        { text: 'Contact Us', url: '/contact' },
+        { text: 'Home', url: '/' },
+        { text: 'About Us', url: '/aboutus-cab-dwarka' },
+        { text: 'Services', url: '/services-cab-dwarka' },
+        { text: 'Packages', url: '/pricing-cab-dwarka' },
+        { text: 'Book Taxi', url: '/book-taxi-dwarka' },
+        { text: 'Contact Us', url: '/contact-cab-dwarka' },
     ];
 
     const newsletterText = "Subscribe to our newsletter for updates on our services, offers, and more!";
@@ -130,7 +130,7 @@ const Footer = () => {
 
                 <div className='mt-[50px] pt-[5px] border-t-[1px] border-t-gray'>
                     <p className='text-center'>
-                        <Link href="https://techexpertsworld.com/" className='text-[15px] font-stylefont font-semibold'>Copyright 2024 © Vastranand Private Limited. All Rights Reserved.</Link>
+                        <Link href="https://seathinks.com/" className='text-[15px] font-stylefont font-semibold'>Copyright 2024 © Seathink - Surat Gujarat.</Link>
                     </p>
                 </div>
             </div>
@@ -146,7 +146,7 @@ const Footer = () => {
                     <Image
                         src={whatshapp}
                         alt="WhatsApp icon"
-                        width={80}
+                        width={50}
                         height={50}
                         className="zoom-animation"
                     />

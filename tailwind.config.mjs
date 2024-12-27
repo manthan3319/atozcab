@@ -9,29 +9,32 @@ export default {
     extend: {
       colors: {
         yellow: "#FFA431",
-        lightyellow:"#FDC348",
-        bluegreen:"#0B7289",
-        gray:"#303030",
+        lightyellow: "#FDC348",
+        bluegreen: "#0B7289",
+        gray: "#303030",
         input: "#727272",
       },
       fontFamily: {
-        stylefont: ['Archivo', 'sans-serif'],
-        textfont: ['Epilogue', 'sans-serif'],
-        titlefont: ['Lexend', 'sans-serif'],
+        stylefont: ["Archivo", "sans-serif"],
+        textfont: ["Epilogue", "sans-serif"],
+        titlefont: ["Lexend", "sans-serif"],
       },
-      
     },
   },
   plugins: [
+    require("tailwind-scrollbar"), // Add this line
     function ({ addUtilities }) {
       addUtilities(
         {
-          '.clip-triangle': {
-            clipPath: 'polygon(0 0, 0% 100%, 100% 0)',
+          ".clip-triangle": {
+            clipPath: "polygon(0 0, 0% 100%, 100% 0)",
           },
         },
-        ['responsive', 'hover']
+        ["responsive", "hover"]
       );
     },
   ],
+  variants: {
+    scrollbar: ["rounded"], // Enable variants for rounded scrollbars
+  },
 };

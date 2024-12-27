@@ -27,7 +27,7 @@ import footerBg from "./footer-bg.jpg";
 import services from "./services-cab-dwarka.svg";
 import contactService from "./atoz-cab-dwarka-inquery-from.svg";
 import GujaratTempleTours from "./Gujarat-Temple-Tours-atoz-cab.svg";
-import CityTravel from "./City-Travel-Services-atoz-cab.svg";
+import CityTravel from "./City-Travel-Services-atoz-cab.jpg";
 import BusinessTravel from "./Business-Travel-atoz-cab.svg";
 import OutstationCab from "./Outstation-Cab-Services-atoz-cab.svg";
 import AirportTransferssvg from "./Airport-Transfers-atoz-cab.svg";
