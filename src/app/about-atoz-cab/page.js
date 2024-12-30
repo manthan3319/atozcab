@@ -39,10 +39,7 @@ const AboutAtoZCab = () => {
             <Image
               src={aboutus}
               alt="AtoZ Cab Dwarka"
-              className="w-full h-auto object-cover"
-              width={100}
-              height={100}
-              priority
+              className="w-full h-auto object-cover "
             />
           </div>
 

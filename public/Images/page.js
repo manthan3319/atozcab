@@ -17,7 +17,7 @@ import passengericon from "./Passenger-icon.svg";
 import usericon from "./user-icon.svg";
 import locationicon from "./location-icon.svg";
 import taxiAnimation from "./taxi-dwarka-to-somnath.png";
-import aboutus from "./atoz-cab-dwarka.svg";
+import aboutus from "./atoz-cab-dwarka.jpg";
 import supporticon from "./atoz-cab-dwarka-support.svg";
 import LatestServices1 from "./atoz-gujarat-temple-tour.svg";
 import downicon from "./down-icon.svg";

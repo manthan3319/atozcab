@@ -11,7 +11,7 @@ const contactData = [
         title: 'Our Location',
         icon: '📍',
         description: 'Visit AtoZ Cab Dwarka at our office for personalized service and support.',
-        details: 'Dwarka, New Delhi, India',
+        details: 'Dwarka, Gujarat, India',
     },
     {
         id: 2,
@@ -101,7 +101,7 @@ const Contact = () => {
                             <div className="w-full lg:w-1/2">
                                 <Image src={contactService} alt="service - atoz dwarka" width={100} height={100} className="w-[100%] h-full" />
                             </div>
-                            <div className="w-full lg:w-1/2  bg-white shadow-lg p-[18px]">
+                            <div className="w-full lg:w-1/2  bg-white shadow-lg p-[18px] h-full">
                                 <h2 className="font-titlefont text-[25px] font-semibold lg:text-[35px] text-bluegreen mb-4">Inquiry Form</h2>
                                 <form>
                                     <div className="mb-4">

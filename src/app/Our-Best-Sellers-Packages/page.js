@@ -51,7 +51,6 @@ const PackageCard = ({ pkg }) => {
             ))}
           </ul>
 
-          {/* Option Selector */}
           <div className="mt-4">
             <p className="font-bold text-gray-800">Select Option:</p>
             <select
@@ -71,26 +70,30 @@ const PackageCard = ({ pkg }) => {
             </p>
             <ul
               ref={listRef}
-              className={`mt-2 h-[100px] overflow-y-auto scrollbar-thin ${
-                isOverflowing
+              className={`mt-2 h-[100px] overflow-y-auto scrollbar-thin ${isOverflowing
                   ? "scrollbar-thumb-gray-400 scrollbar-track-gray-200"
                   : "scrollbar-none"
-              }`}
+                }`}
             >
-              {(selectedOption === "twoway" ? pkg.cars : pkg.oneway).map((car, carIndex) => (
+              {(selectedOption === "twoway" ? pkg.cars : pkg.oneway)?.map((car, carIndex) => (
                 <li
                   key={carIndex}
                   className="flex justify-between text-gray-700"
                 >
-                  <span>{car.type} (₹{car.kmprice}/km)</span>
+                  <span>
+                    {car.type} {selectedOption === "twoway" ? ` (₹${car.kmprice}/km)` : ""}
+                  </span>
                   <span className="flex flex-row gap-[5px]">
                     <span>₹</span>
-                    {car.price}
+                    {selectedOption === "twoway" ? ` ${car.price ?? "N/A"}` :` ${car.kmprice}/km` } 
                   </span>
                 </li>
-              ))}
+              )) || (
+                  <li className="text-gray-500">No options available.</li>
+                )}
             </ul>
           </div>
+
         </div>
 
         {/* Call-to-Action */}
