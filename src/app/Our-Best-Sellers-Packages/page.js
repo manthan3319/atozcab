@@ -32,14 +32,12 @@ const PackageCard = ({ pkg }) => {
 
   return (
     <div className="flex flex-col rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl overflow-hidden bg-white">
-      {/* Image Section */}
+   
       <div className="h-[350px] bg-gradient-to-r overflow-hidden from-blue-500 to-bluegreen flex items-center justify-center text-white text-lg font-bold">
         <Image src={pkg.img} alt={pkg.title} className="w-full" width={100} height={350} />
       </div>
 
-      {/* Content Section */}
       <div className="p-5 flex flex-col justify-between h-[650px]">
-        {/* Package Details */}
         <div>
           <p className="mb-[5px] font-stylefont font-normal">{pkg.title}</p>
           <p className="text-bluegreen font-semibold text-sm">{pkg.duration}</p>
@@ -63,7 +61,6 @@ const PackageCard = ({ pkg }) => {
             </select>
           </div>
 
-          {/* Car Options */}
           <div className="mt-4">
             <p className="font-bold text-gray-800">
               {selectedOption === "twoway" ? "Two Way Car Options:" : "One Way Car Options:"}
@@ -81,7 +78,7 @@ const PackageCard = ({ pkg }) => {
                   className="flex justify-between text-gray-700"
                 >
                   <span>
-                    {car.type} {selectedOption === "twoway" ? ` (₹${car.kmprice}/km)` : ""}
+                    {car.type} {selectedOption === "twoway" ? ` ` : ""}
                   </span>
                   <span className="flex flex-row gap-[5px]">
                     <span>₹</span>
@@ -96,7 +93,6 @@ const PackageCard = ({ pkg }) => {
 
         </div>
 
-        {/* Call-to-Action */}
         <div className="flex items-center justify-between mt-4 border-t pt-4">
           <Link
             href={`https://wa.me/+918530802090?text=Hello,%20I%20want%20to%20book%20the%20${pkg.title}%20package%20with%20a%20${selectedOption}%20option.%20Please%20provide%20details.`}

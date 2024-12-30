@@ -1,6 +1,7 @@
-"use client"
+"use client";
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
+import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import {
   callicon,
@@ -12,37 +13,58 @@ import {
   timeicon,
   usericon,
 } from '../../../public/Images/page';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
 
 const inputFields = [
-  { placeholder: 'Your Name', icon: usericon },
-  { placeholder: 'Phone', icon: callicon },
-  { placeholder: 'Email', icon: emailicon2 },
-  { placeholder: 'Passenger', icon: passengericon },
-  { placeholder: 'Start Destination', icon: locationicon },
-  { placeholder: 'End Destination', icon: locationicon },
-  { placeholder: 'Date', type: 'date' },
-  { placeholder: 'Time', type: 'time' },
+  { placeholder: 'Your Name', icon: usericon, name: 'name' },
+  { placeholder: 'Phone', icon: callicon, name: 'phone' },
+  { placeholder: 'Email', icon: emailicon2, name: 'email' },
+  { placeholder: 'Passenger', icon: passengericon, name: 'passenger' },
+  { placeholder: 'Start Destination', icon: locationicon, name: 'start_destination' },
+  { placeholder: 'End Destination', icon: locationicon, name: 'end_destination' },
+  { placeholder: 'Date', type: 'date', name: 'date' },
+  { placeholder: 'Time', type: 'time', name: 'time' },
 ];
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeInOut' } },
-};
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.5,
-    },
-  },
-};
-const inputFieldVariants = {
-  hidden: { opacity: 0, y: 0 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease: 'easeInOut' } },
-};
-
 const OnlineBooking = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    passenger: '',
+    start_destination: '',
+    end_destination: '',
+    date: '',
+    time: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleBookingClick = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        'service_m7msz7c', 
+        'template_hj9n33d',
+        formData,
+        'fX6Ymx3UT-XKESk44'
+      )
+      .then(
+        (result) => {
+          alert('Booking request sent successfully!');
+        },
+        (error) => {
+          alert('Failed to send booking request. Please try again.');
+        }
+      );
+  };
+
   return (
     <div className="mt-[50px]">
       <div className="lg:max-w-[1440px] m-auto px-[20px]">
@@ -57,73 +79,72 @@ const OnlineBooking = () => {
             />
           </div>
         </div>
-        <div className="bg-gray rounded-md md:w-[70%] w-[100%] m-auto booking-section after:h-full after:left-0 after:w-[300px] after:top-1 relative overflow-hidden p-[20px]">
+        <div className="bg-gray rounded-md md:w-[70%] w-[100%] m-auto booking-section relative overflow-hidden p-[20px]">
           <div className="absolute inset-0 bg-black opacity-50 z-[1]"></div>
           <div className="xl:text-right text-left relative z-[2]">
-            <div className="relative z-[99]">
-              <h2 className="lg:text-[25px] text-[18px] font-stylefont font-medium text-lightyellow">
-                Online booking
-              </h2>
-              <h1 className="text-[20px] lg:text-[30px] font-titlefont font-semibold text-yellow">
-                Confirm your booking now!
-              </h1>
+            <h2 className="lg:text-[25px] text-[18px] font-stylefont font-medium text-lightyellow">
+              Online booking
+            </h2>
+            <h1 className="text-[20px] lg:text-[30px] font-titlefont font-semibold text-yellow">
+              Confirm your booking now!
+            </h1>
 
-              <div className="lg:w-[60%] w-[100%] float-end bokking-from-section">
-                <motion.div
-                  className="grid lg:grid-cols-3 gap-x-[15px] gap-y-[25px] mt-[25px] animate-slideDown"
-                  variants={sectionVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {inputFields.map((field, index) => (
-                    <motion.div
-                      key={index}
-                      variants={containerVariants}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      style={{
-                        transitionDelay: `${(index + 1) * 0.3}s`,
-                      }}
-                    >
-                      <InputField
-                        placeholder={field.placeholder}
-                        icon={field.icon || null}
-                        type={field.type}
-                      />
-                    </motion.div>
-                  ))}
+            <form
+              className="lg:w-[60%] w-[100%] float-end booking-form-section"
+              onSubmit={handleBookingClick}
+            >
+              <motion.div className="grid lg:grid-cols-3 gap-x-[15px] gap-y-[25px] mt-[25px]">
+                {inputFields.map((field, index) => (
+                  <div key={index}>
+                    <InputField
+                      placeholder={field.placeholder}
+                      icon={field.icon || null}
+                      type={field.type}
+                      name={field.name}
+                      value={formData[field.name]}
+                      onChange={handleChange}
+                    />
+                  </div>
+                ))}
+              </motion.div>
 
-                </motion.div>
-
-                <div className="float-left mt-[50px]">
-                  <button className="booking-sectionbtn">Book a Taxi</button>
-                </div>
+              <div className="float-left mt-[50px]">
+                <button className="booking-sectionbtn" type="submit">
+                  Book a Taxi
+                </button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
+      <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition={Bounce}
+/>
     </div>
   );
 };
-const InputField = ({ placeholder, icon, type }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
 
+const InputField = ({ placeholder, icon, type, name, value, onChange }) => {
   return (
-    <div
-      ref={ref}
-      className={`flex flex-row gap-[5px] items-center border-gray border-[1px] px-[5px] py-[10px] rounded-sm`}
-    >
+    <div className="flex flex-row gap-[5px] items-center border-gray border-[1px] px-[5px] py-[10px] rounded-sm">
       <input
         type={type || 'text'}
         placeholder={placeholder}
-        className="w-[100%] bg-transparent  placeholder:text-input outline-none font-textfont text-white text-[14px]"
+        name={name}
+        value={value}
+        onChange={onChange}
+        className="w-[100%] bg-transparent placeholder:text-input outline-none font-textfont text-white text-[14px]"
       />
-      {/* आइकन केवल तभी रेंडर करें जब `icon` मौजूद हो */}
       {icon && <Image src={icon} width={30} height={30} className="imageFilter" />}
     </div>
   );
